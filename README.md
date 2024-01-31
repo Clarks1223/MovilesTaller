@@ -1,16 +1,16 @@
-# splashscreen
+# Parte 1
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+##Pantalla de login
+![image](https://github.com/Clarks1223/MovilesTaller/assets/117754199/9182f791-5fe4-40e2-8111-4573d342671a)
+##Pantalla de registro de usuario
+![image](https://github.com/Clarks1223/MovilesTaller/assets/117754199/8001d133-f90a-4715-825d-1cfeea5f3fc2)
+##Pantalla para recuperar contraseña
+![image](https://github.com/Clarks1223/MovilesTaller/assets/117754199/d3f7fb92-313a-49fd-aa19-fda38bf07dba)
+##Pantalla principal
+![image](https://github.com/Clarks1223/MovilesTaller/assets/117754199/d2be711e-fd56-4de9-b6d3-82119b441740)
+##Agregar un mensaje nuevo
+![image](https://github.com/Clarks1223/MovilesTaller/assets/117754199/8edb7104-011d-4a56-9d8b-08697820d75a)
+##Lista de mensajes agregados
+![image](https://github.com/Clarks1223/MovilesTaller/assets/117754199/ecbba19c-a2fb-4bbd-b990-eec6e453dbca)
+##Mensajes agregados a la firestore
+![image](https://github.com/Clarks1223/MovilesTaller/assets/117754199/2f561e66-359f-4152-8157-07a797ed1bbb)
