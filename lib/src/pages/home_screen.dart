@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -24,8 +23,7 @@ class HomeScreen extends StatelessWidget {
 
           return ListView(
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
-              Map<String, dynamic> data =
-                  document.data() as Map<String, dynamic>;
+              Map<String, dynamic> data = document.data() as Map<String, dynamic>;
               String imageUrl = data['Foto'];
 
               return ListTile(
@@ -34,25 +32,10 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Ubicación: ${data['Ubicacion']}'),
-                    FutureBuilder(
-                      future: _getImageUrl(imageUrl),
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
-                          return CircularProgressIndicator();
-                        } else if (snapshot.hasError) {
-                          return Text('Error al cargar la imagen');
-                        } else if (!snapshot.hasData || snapshot.data == null) {
-                          return Text('No se pudo obtener la imagen');
-                        } else {
-                          String imageUrl = snapshot.data as String;
-                          return Image.network(
-                            imageUrl,
-                            width: 100,
-                            height: 100,
-                          );
-                        }
-                      },
+                    Image.network(
+                      imageUrl,
+                      width: 300,
+                      height: 300,
                     ),
                     Text('Descripción: ${data['Descripcion']}'),
                   ],
@@ -63,15 +46,5 @@ class HomeScreen extends StatelessWidget {
         },
       ),
     );
-  }
-
-  Future<String> _getImageUrl(String imagePath) async {
-    try {
-      final Reference ref = FirebaseStorage.instance.ref().child(imagePath);
-      return await ref.getDownloadURL();
-    } catch (e) {
-      print('Error al obtener la URL de la imagen: $e');
-      return '';
-    }
   }
 }
